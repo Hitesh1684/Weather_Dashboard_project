@@ -4,21 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="light">
     <div id="weather-app">
         <h1>Weather Dashboard</h1>
-        <input type="text" id="city-input" placeholder="Enter city name">
-        <button id="search-btn">Search</button>
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+        </div>
         <div id="error-message"></div>
         <div id="weather-result">
-            <h2 id="city-name"></h2>
-            <p id="temperature"></p>
-            <p id="description"></p>
-            <p id="humidity"></p>
+            <div class="weather-main">
+                <h2 id="city-name"></h2>
+                <div class="weather-icon" id="weather-icon"></div>
+                <p class="temperature" id="temperature"></p>
+                <p class="description" id="description"></p>
+            </div>
+            <div class="weather-details">
+                <div class="weather-card">
+                    <i class="fas fa-tint"></i>
+                    <p id="humidity"></p>
+                </div>
+                <div class="weather-card">
+                    <i class="fas fa-wind"></i>
+                    <p id="wind"></p>
+                </div>
+                <div class="weather-card">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    <p id="pressure"></p>
+                </div>
+                <div class="weather-card">
+                    <i class="fas fa-sun"></i>
+                    <p id="sunrise"></p>
+                </div>
+            </div>
+            <div class="weather-forecast" id="forecast">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-container" id="forecast-container"></div>
+            </div>
         </div>
-        <button id="theme-toggle">Toggle Dark/Light Mode</button>
+        <div class="app-controls">
+            <button id="theme-toggle"><i class="fas fa-moon"></i> Toggle Dark Mode</button>
+            <button id="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
